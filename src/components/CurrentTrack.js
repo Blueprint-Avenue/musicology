@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Footer() {
+export default function CurrentTrack() {
 	return <Container>Footer</Container>;
 }
 

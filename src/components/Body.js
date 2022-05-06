@@ -153,7 +153,7 @@ const Container = styled.div`
 			display: grid;
 			grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
 			color: #ecdbba;
-			margin: 1rem 0 0 0;
+			margin: 1rem 0.1rem 0 0.1rem;
 			position: sticky;
 			top: 15vh;
 			padding: 1rem 3rem;
@@ -171,7 +171,8 @@ const Container = styled.div`
 		.row {
 			padding: 0.5rem 1rem;
 			display: grid;
-			grid-template-columns: 0.3fr 3.1fr 1.8fr 0.1fr;
+			grid-template-columns: 0.3fr 3.1fr 2fr 0.1fr;
+			cursor: pointer;
 			&:hover {
 				background-color: #346751;
 			}

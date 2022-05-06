@@ -41,6 +41,7 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	border-right: 3px solid #161616;
 	.top__Links {
 		display: flex;
 		flex-direction: column;
