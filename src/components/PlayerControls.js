@@ -25,7 +25,7 @@ export default function PlayerControls() {
 			}
 		);
 		dispatch({type: reducerCases.SET_PLAYER_STATE, playerState: true});
-		const response1 = await axios.get(
+		const response = await axios.get(
 			"https://api.spotify.com/v1/me/player/currently-playing",
 			{
 				headers: {
@@ -34,12 +34,12 @@ export default function PlayerControls() {
 				},
 			}
 		);
-		if (response1.data !== "") {
+		if (response.data !== "") {
 			const currentPlaying = {
-				id: response1.data.item.id,
-				name: response1.data.item.name,
-				artists: response1.data.item.artists.map((artist) => artist.name),
-				image: response1.data.item.album.images[2].url,
+				id: response.data.item.id,
+				name: response.data.item.name,
+				artists: response.data.item.artists.map((artist) => artist.name),
+				image: response.data.item.album.images[2].url,
 			};
 			dispatch({type: reducerCases.SET_PLAYING, currentPlaying});
 		} else {

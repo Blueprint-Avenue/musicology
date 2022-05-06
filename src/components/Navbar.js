@@ -9,8 +9,11 @@ export default function Navbar({navBackground}) {
 	return (
 		<Container navBackground={navBackground}>
 			<div className="search__Bar">
-				<FaSearch />
-				<input type="text" placeholder="Search Musicology For Your Fav" />
+				<FaSearch color="#C84B31" />
+				<input
+					type="text"
+					placeholder="Search Musicology For Your Favorite Tunes"
+				/>
 			</div>
 			<div className="avatar">
 				<a href="#">
@@ -35,7 +38,7 @@ const Container = styled.div`
 		navBackground ? "rgb(22,22,22)" : "none"};
 	.search__Bar {
 		background-color: #346751;
-		width: 30%;
+		width: 40%;
 		padding: 0.4rem 1rem;
 		border-radius: 2rem;
 		display: flex;
@@ -49,6 +52,9 @@ const Container = styled.div`
 			color: #ecdbba;
 			height: 2rem;
 			width: 100%;
+			::placeholder {
+				color: #ecdbba;
+			}
 		}
 	}
 	.avatar {

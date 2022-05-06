@@ -1,8 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import img from "../assets/img/Wu.png";
-import {IoLibrary} from "react-icons/io5";
-import {MdHomeFilled, MdSearch} from "react-icons/md";
+import {
+	ChartBarIcon,
+	ClockIcon,
+	DotsHorizontalIcon,
+	HomeIcon,
+} from "@heroicons/react/solid";
+import {FaMicrophoneAlt} from "react-icons/fa";
+import {RiCompassFill} from "react-icons/ri";
 import Playlist from "./Playlist";
 
 function Sidebar() {
@@ -14,19 +20,20 @@ function Sidebar() {
 				</div>
 				<ul>
 					<li>
-						<MdHomeFilled />
-						<span>Home</span>
+						<HomeIcon color="#C84B31" />
 					</li>
 					<li>
-						<MdSearch />
-						<span>Search</span>
+						<ChartBarIcon />
 					</li>
 					<li>
-						<IoLibrary />
-						<span>Your Playlists</span>
+						<ClockIcon />
+					</li>
+					<li>
+						<DotsHorizontalIcon />
 					</li>
 				</ul>
 			</div>
+			<hr size="3" noshade />
 			<Playlist />
 		</Container>
 	);
@@ -52,6 +59,20 @@ const Container = styled.div`
 				max-inline-size: 80%;
 				block-size: auto;
 				transform: scaleY(-1);
+				animation: pulse-white 2s infinite;
+				@keyframes pulse-white {
+					0% {
+						transform: scale(0.95);
+					}
+
+					70% {
+						transform: scale(1);
+					}
+
+					100% {
+						transform: scale(0.95);
+					}
+				}
 			}
 		}
 		ul {
@@ -63,6 +84,7 @@ const Container = styled.div`
 			li {
 				display: flex;
 				gap: 1rem;
+				height: 1.75rem;
 				cursor: pointer;
 				transition: 0.3s ease-in-out;
 				&:hover {
@@ -70,5 +92,13 @@ const Container = styled.div`
 				}
 			}
 		}
+	}
+	hr {
+		border-style: none;
+		border-top-style: dotted;
+		border-color: #c84b31;
+		border-width: 5px;
+		width: 100%;
+		/* margin-left: 10px; */
 	}
 `;

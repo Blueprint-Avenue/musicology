@@ -41,6 +41,20 @@ const Container = styled.div`
 	img {
 		height: 50vh;
 		transform: scaleY(-1);
+		animation: pulse-white 2s infinite;
+		@keyframes pulse-white {
+			0% {
+				transform: scale(0.95);
+			}
+
+			70% {
+				transform: scale(1);
+			}
+
+			100% {
+				transform: scale(0.95);
+			}
+		}
 	}
 	button {
 		padding: 1rem 5rem;
