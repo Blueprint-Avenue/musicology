@@ -1,6 +1,6 @@
-# react-native-UBER CLONE 💸
+# react MUSICOLOGY 💸
 
-A sweet & simple react native UBER clone that features realtime fetching prices, location, and distance using the GoogleMaps API.
+A sweet & simple react music app that features custom colors, heroicons, and fetches the Spotify API.
 
 <div style="display: flex; align-items: center; justify-content: center; width: 100%;">
   <img src="assets/img/Login.PNG" width="300px" />
