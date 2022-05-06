@@ -41,6 +41,7 @@ const Container = styled.div`
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+		margin-bottom: 30px;
 		input {
 			background-color: #346751;
 			outline: none;
@@ -58,6 +59,7 @@ const Container = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-bottom: 30px;
 		a {
 			display: flex;
 			justify-content: center;

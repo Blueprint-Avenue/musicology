@@ -153,7 +153,7 @@ const Container = styled.div`
 			display: grid;
 			grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
 			color: #ecdbba;
-			margin: 1rem 0.1rem 0 0.1rem;
+			margin: 1rem 0.3rem 0 0.3rem;
 			position: sticky;
 			top: 15vh;
 			padding: 1rem 3rem;

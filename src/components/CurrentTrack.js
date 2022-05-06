@@ -1,18 +1,69 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
+import {useStateProvider} from "../utils/StateProvider";
+import axios from "axios";
+import {reducerCases} from "../utils/Contants";
 
 export default function CurrentTrack() {
-	return <Container>Footer</Container>;
+	const [{token, currentlyPlaying}, dispatch] = useStateProvider();
+
+	useEffect(() => {
+		const getCurrentTrack = async () => {
+			const response = await axios.get(
+				"https://api.spotify.com/v1/me/player/currently-playing",
+				{
+					headers: {
+						Authorization: "Bearer " + token,
+						"Content-Type": "application/json",
+					},
+				}
+			);
+			if (response.data !== "") {
+				const {item} = response.data;
+				const currentlyPlaying = {
+					id: item.id,
+					name: item.name,
+					artists: item.artists.map((artist) => artist.name),
+					image: item.album.images[2].url,
+				};
+				dispatch({type: reducerCases.SET_PLAYING, currentlyPlaying});
+			}
+		};
+		getCurrentTrack();
+	}, [token, dispatch]);
+
+	return (
+		<Container>
+			{currentlyPlaying && (
+				<div className="track">
+					<div className="track__image">
+						<img src={currentlyPlaying.image} alt="CurrentlyPlaying" />
+					</div>
+					<div className="track__info">
+						<h4>{currentlyPlaying.name}</h4>
+						<h6>{currentlyPlaying.artists.join(", ")}</h6>
+					</div>
+				</div>
+			)}
+		</Container>
+	);
 }
 
 const Container = styled.div`
-	background-color: #346751;
-	height: 100%;
-	width: 100%;
-	border-top: 3px solid #161616;
-	display: grid;
-	grid-template-columns: 1fr 2fr 1fr;
-	align-items: center;
-	justify-content: center;
-	padding: 0 1rem;
+	.track {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		&__info {
+			display: flex;
+			flex-direction: column;
+			gap: 0.3rem;
+			h4 {
+				color: #ecdbba;
+			}
+			h6 {
+				color: #ecdbba;
+			}
+		}
+	}
 `;

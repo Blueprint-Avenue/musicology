@@ -50,6 +50,7 @@ const Container = styled.div`
 		color: #ecdbba;
 		font-size: 1.4rem;
 		cursor: pointer;
+		margin-top: 20px;
 		:hover {
 			background-color: #ecdbba;
 			color: #346751;
