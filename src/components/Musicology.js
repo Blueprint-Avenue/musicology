@@ -38,8 +38,7 @@ const Container = styled.div`
 		grid-template-columns: 15vw 85vw;
 		height: 100%;
 		width: 100%;
-		background: linear-gradient(transparent, rgb(0, 0, 0, 1));
-		background-color: #04293a;
+		background-color: #c84b31;
 		.body {
 			height: 100%;
 			width: 100%;

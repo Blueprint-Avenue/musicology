@@ -6,7 +6,6 @@ export default function Footer() {
 }
 
 const Container = styled.div`
-	background: linear-gradient(transparent, rgb(0, 0, 0, 1));
-	background-color: #04293a;
+	background-color: #346751;
 	height: 100%;
 `;

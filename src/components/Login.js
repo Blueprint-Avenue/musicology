@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import img from "../assets/img/VinylLogo.png";
+import img from "../assets/img/Wu.png";
 
 export default function Login() {
 	const handleClick = () => {
@@ -37,21 +37,22 @@ const Container = styled.div`
 	justify-content: center;
 	height: 100vh;
 	width: 100vw;
-	background-color: #041c32;
+	background-color: #346751;
 	img {
 		height: 50vh;
+		transform: scaleY(-1);
 	}
 	button {
 		padding: 1rem 5rem;
 		border-radius: 5rem;
 		border: none;
-		background-color: #f32424;
-		color: #f2f2f2;
+		background-color: #c84b31;
+		color: #ecdbba;
 		font-size: 1.4rem;
 		cursor: pointer;
 		:hover {
-			background-color: #f2f2f2;
-			color: #f32424;
+			background-color: #346751;
+			color: #ecdbba;
 			transition: ease-in-out;
 		}
 	}
