@@ -51,8 +51,8 @@ const Container = styled.div`
 		font-size: 1.4rem;
 		cursor: pointer;
 		:hover {
-			background-color: #346751;
-			color: #ecdbba;
+			background-color: #ecdbba;
+			color: #346751;
 			transition: ease-in-out;
 		}
 	}
