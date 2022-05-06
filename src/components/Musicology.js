@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
@@ -10,6 +10,18 @@ import {reducerCases} from "../utils/Contants";
 
 export default function Musicology() {
 	const [{token}, dispatch] = useStateProvider();
+	const bodyRef = useRef();
+	const [navBackground, setNavBackground] = useState(false);
+	const [headerBackground, setHeaderBackground] = useState(false);
+
+	const bodyScrolled = () => {
+		bodyRef.current.scrollTop >= 30
+			? setNavBackground(true)
+			: setNavBackground(false);
+		bodyRef.current.scrollTop >= 268
+			? setHeaderBackground(true)
+			: setHeaderBackground(false);
+	};
 
 	useEffect(() => {
 		const getUserInfo = async () => {
@@ -19,7 +31,6 @@ export default function Musicology() {
 					"Content-Type": "application/json",
 				},
 			});
-			console.log({data});
 			const userInfo = {
 				userId: data.id,
 				userName: data.display_name,
@@ -34,12 +45,12 @@ export default function Musicology() {
 			<div className="music__Body">
 				{/* SideBar */}
 				<Sidebar />
-				<div className="body">
+				<div className="body" ref={bodyRef} onScroll={bodyScrolled}>
 					{/* Navbar */}
-					<Navbar />
-					<div className="body__Contents">
+					<Navbar navBackground={navBackground} />
+					<div className="body__Contents" ref={bodyRef} onScroll={bodyScrolled}>
 						{/* Body */}
-						<Body />
+						<Body headerBackground={headerBackground} />
 					</div>
 				</div>
 			</div>
